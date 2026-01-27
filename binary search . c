@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int binarysearch(int arr[],int low,int high,int key){
+    if(high<low)
+      return -1;
+    
+    int mid = (low + high) / 2;
+    
+    if(arr[mid] == key){
+        return mid;
+    }
+    
+    if(key > arr[mid])
+         return binarysearch(arr, (mid + 1),high,key);
+    return binarysearch(arr,low,(mid - 1),key);
+}
+
+int main(){
+    int arr[] = {1,2,3,4,5,7,8,9};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int key = 8;
+    
+    int num = binarysearch(arr,0,n-1,key);
+    if(num == -1){
+        printf("index is not found");
+    }else{
+        printf("index is : %d",num);
+    }
+    return 0;
+}
