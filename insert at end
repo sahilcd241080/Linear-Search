@@ -1,0 +1,20 @@
+#include<stdio.h>
+
+int main(){
+    int arr[10] = {2,3,4,5,6};
+    int n = 5;
+    int val = 10;
+    
+    for(int i=0;i<n;i++){
+        printf("%d ->",arr[i]);
+    }
+    
+    
+    arr[n]=val;
+    n++;
+    printf("\n");
+    for(int i=0;i<n;i++){
+        printf("%d->",arr[i]);
+    }
+    
+}
